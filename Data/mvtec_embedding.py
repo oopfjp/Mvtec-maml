@@ -5,8 +5,6 @@ from torch.utils.data import Dataset, DataLoader
 from utils import files_to_tensor, cls_files
 from category_split import train_cls
 
-
-# a = 1
 class MvTec(Dataset):
     def __init__(self, root = 'D:\\datasets\\meta-learning\\mvtec'):
         self.root = root
@@ -31,14 +29,7 @@ class MvTec(Dataset):
 
 
     def __len__(self):
-        # pass
         return len(self.list_to_files)
-
-    # def test(self):
-    #     pass
-    #     # return self.train_good, self.test_good
-
-
 
 
 if __name__ == "__main__":
