@@ -24,27 +24,6 @@ class MvTec(Dataset):
             for file in files:
                 self.list_to_files.append([idx, file])
         random.shuffle(self.list_to_files)
-        # self.data = {}
-        # self.train_data = []
-        # self.val_data = []
-        # for cat in self.category:
-        #     train_files = [os.path.join(self.root, cat, 'train', 'good', file_name) for file_name in os.listdir(os.path.join(self.root, cat, 'train', 'good'))]
-        #     test_files = [os.path.join(self.root, cat, 'test', 'good', file_name) for file_name in os.listdir(os.path.join(self.root, cat, 'test', 'good'))]
-        #     total = train_files + test_files
-        #     self.data[cat] = total
-        # for idx, (_, files) in enumerate(self.data.items()):
-        #     len_file = len(files)
-        #     for file in files[:int(len_file * 0.8)]:
-        #         self.train_data.append((idx, file))
-        #     for file in files[int(len_file * 0.8):]:
-        #         self.val_data.append((idx, file))
-        # random.shuffle(self.train_data)
-        # random.shuffle(self.val_data)
-        # if 'train' == mode:
-        #     self.all_data = self.train_data
-        # elif 'val' == mode:
-        #     self.all_data = self.val_data
-
 
     def __getitem__(self, idx):
         label, data = self.list_to_files[idx]
